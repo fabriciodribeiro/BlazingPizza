@@ -1,11 +1,11 @@
 @inject HttpClient HttpClient
 @code {
-    [Parameter] 
+    [Parameter]
     public Pizza Pizza { get; set; }
     [Parameter]
-    public EventCallback OnCancel {get; set;}
+    public EventCallback OnCancel { get; set; }
     [Parameter]
-    public EventCallback OnConfirm {get; set;}
+    public EventCallback OnConfirm { get; set; }
 }
 
 <div class="dialog-container">
@@ -17,7 +17,8 @@
         <form class="dialog-body">
             <div>
                 <label>Size:</label>
-                <input type="range" min="@Pizza.MinimumSize" max="@Pizza.MaximumSize" step="1" />
+                <input type="range" min="@Pizza.MinimumSize" max="@Pizza.MaximumSize" step="1" @bind="Pizza.Size"
+                    @bind:event="oninput" />
                 <span class="size-label">
                     @(Pizza.Size)" (£@(Pizza.GetFormattedTotalPrice()))
                 </span>
