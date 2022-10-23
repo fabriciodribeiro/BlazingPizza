@@ -1,4 +1,4 @@
-namespace BlazingPizza.Services;
+namespace BlazingPizza;
 
 public class OrderState
 {
@@ -41,6 +41,6 @@ public class OrderState
 
     public void ResetOrder()
     {
-
+        Order = new Order();
     }
 }
