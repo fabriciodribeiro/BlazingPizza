@@ -45,9 +45,7 @@
                     @if (@item.StatusText != "Delivered")
                     {
                         <div class="col flex-grow-0">
-                            <a href="myorders/@item.Order.OrderId" class="btn btn-success">
-                                Track &gt;
-                            </a>
+                            <a href="myorders/@item.Order.OrderId" class="btn btn-success"></a>
                         </div>
                     }
                 </div>
@@ -61,7 +59,6 @@
 
     protected override async Task OnParametersSetAsync()
     {
-        ordersWithStatus = await HttpClient.GetFromJsonAsync<List<OrderWithStatus>>(
-        $"{NavigationManager.BaseUri}orders");
+        ordersWithStatus = await HttpClient.GetFromJsonAsync<List<OrderWithStatus>>($"{NavigationManager.BaseUri}orders");
     }
 }

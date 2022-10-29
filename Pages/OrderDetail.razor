@@ -77,7 +77,8 @@
     {
         try
         {
-            orderWithStatus = await HttpClient.GetFromJsonAsync<OrderWithStatus>($"{NavigationManager.BaseUri}orders/{OrderId}");
+            var orderWithStatus = await
+            HttpClient.GetFromJsonAsync<OrderWithStatus>($"{NavigationManager.BaseUri}orders/{OrderId}");
         }
         catch (Exception ex)
         {
