@@ -30,7 +30,6 @@
 </div>
 
 @code {
-    bool isSubmitting;
     bool isError = false;
     private EditContext editContext;
 
@@ -65,19 +64,4 @@
     {
         editContext.OnFieldChanged -= HandleFieldChanged;
     }
-
-    @* private async Task CheckSubmission(EditContext editContext)
-    {
-        isSubmitting = true;
-        var model = editContext.Model as Address;
-        isError = false;
-        isError = string.IsNullOrWhiteSpace(model?.Name)
-        || string.IsNullOrWhiteSpace(model?.Line1)
-        || string.IsNullOrWhiteSpace(model?.PostalCode);
-        if (!isError)
-        {
-            await PlaceOrder();
-        }
-        isSubmitting = false;
-    } *@
 }
